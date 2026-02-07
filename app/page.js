@@ -17,17 +17,17 @@ export default function Page() {
         <nav className="p-4" aria-label="Weekly assignments">
           <ul className="flex flex-col gap-1">
             <li className={weeklyAssignmentLinkStyle}>
-              <Link className= {weeklyAssignmentLinkTextStyle} href="/week-2">
+              <Link className={weeklyAssignmentLinkTextStyle} href="/week-2">
                 Week 2 Assignment
               </Link>
             </li>
             <li  className={weeklyAssignmentLinkStyle}>
-              <Link className= {weeklyAssignmentLinkTextStyle} href="/week-3">
+              <Link className={weeklyAssignmentLinkTextStyle} href="/week-3">
                 Week 3 Assignment
               </Link>
             </li>
             <li  className={weeklyAssignmentLinkStyle}>
-              <Link className= {weeklyAssignmentLinkTextStyle} href="/week-4">
+              <Link className={weeklyAssignmentLinkTextStyle} href="/week-4">
                 Week 4 Assignment
               </Link>
             </li>
