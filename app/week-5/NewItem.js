@@ -133,23 +133,29 @@ export default function NewItem() {
       
       {/* EXTRA (not required by assignment):
           Render a list of submitted items to confirm state updates are working. */}
-      <div className="mt-6 grid gap-4">
-        {items.map((item, index) => (
-          <div
-            key={index}
-            className="p-4 rounded-lg shadow-md border border-teal-400 bg-gray-100 dark:bg-slate-700"
-          >
-            <h3 className="font-bold text-teal-600 dark:text-teal-400">
-              {item.name}
-            </h3>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
-              Quantity: {item.quantity}
-            </p>
-            <p className="text-sm text-gray-700 dark:text-gray-300">
-              Category: {item.category}
-            </p>
-          </div>
-        ))}
+      <div className="mt-6">
+        <h3 className="text-lg font-bold text-teal-600 dark:text-teal-400 mb-3">
+          Grocery List
+        </h3>
+
+        <ul className="grid gap-4">
+          {items.map((item, index) => (
+            <li
+              key={index}
+              className="p-4 rounded-lg shadow-md border border-teal-400 bg-gray-100 dark:bg-slate-700"
+            >
+              <p className="font-bold text-teal-600 dark:text-teal-400">
+                {item.name}
+              </p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                Quantity: {item.quantity}
+              </p>
+              <p className="text-sm text-gray-700 dark:text-gray-300">
+                Category: {item.category}
+              </p>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
