@@ -68,7 +68,7 @@ export default function ItemList({ items }) {
         </button>
       </div>
 
-      <h2 className="text-2xl mt-10 mb-8 font-bold text-center mb-6 text-slate-900 dark:text-white">
+      <h2 className="text-2xl mt-10 mb-8 font-bold text-center text-slate-900 dark:text-white">
         Grocery List
       </h2>
       {sortBy !== "group" ? (
