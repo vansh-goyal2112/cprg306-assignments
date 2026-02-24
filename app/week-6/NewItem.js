@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-export default function GroceryItemForm({ onAddItem}) {
+export default function GroceryItemForm({ onAddItem }) {
 
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState(1);
