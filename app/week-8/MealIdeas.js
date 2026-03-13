@@ -17,7 +17,7 @@ async function fetchMealIdeas(ingredient) {
     return data.meals || [];
   } catch (error) {
     console.error("Error fetching meal ideas:", error);
-    return [];
+    throw error;
   }
 }
 
@@ -43,11 +43,23 @@ async function fetchMealDetails(mealId) {
 export default function MealIdeas({ ingredient }) {
   const [meals, setMeals] = useState([]);
   const [selectedMeal, setSelectedMeal] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const loadMealIdeas = async () => {
-    const mealIdeas = await fetchMealIdeas(ingredient);
-    setMeals(mealIdeas);
-    setSelectedMeal(null);
+    try {
+      setLoading(true);
+      setError("");
+
+      const mealIdeas = await fetchMealIdeas(ingredient);
+      setMeals(mealIdeas);
+      setSelectedMeal(null);
+    } catch (error) {
+      setError("Failed to load meal ideas.");
+      setMeals([]);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -77,8 +89,11 @@ export default function MealIdeas({ ingredient }) {
   return (
     <div className="mt-6">
       <h2 className="text-xl font-bold mb-4">Meal Ideas</h2>
-
-      {meals.length === 0 ? (
+      {loading ? (
+        <p>Loading meal ideas...</p>
+      ) : error ? (
+        <p>{error}</p>
+      ) : meals.length === 0 ? (
         <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300">No meal ideas found.</p>
       ) : (
         <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
