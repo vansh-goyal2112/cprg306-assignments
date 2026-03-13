@@ -46,6 +46,11 @@ export default function Page() {
                 Week 7 Assignment
               </Link>
             </li>
+            <li  className={weeklyAssignmentLinkStyle}>
+              <Link className={weeklyAssignmentLinkTextStyle} href="/week-8">
+                Week 8 Assignment
+              </Link>
+            </li>
           </ul>
         </nav>
       </header>

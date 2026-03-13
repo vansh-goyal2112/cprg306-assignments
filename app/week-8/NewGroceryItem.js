@@ -10,8 +10,6 @@ export default function GroceryItemForm({ onAddItem }) {
     category: "produce",
   });
 
-  // const [item, setItem] = useState(initialState); I think this is also a more clean way to do this but I followed the instructions stated in week-7 requirements
-
   const categories = [
     "dairy",
     "bakery",
@@ -86,8 +84,7 @@ export default function GroceryItemForm({ onAddItem }) {
             </label>
 
             <div className="flex items-center border border-teal-400 rounded-md overflow-hidden">
-              
-              {/* Decrease Button */}
+
               <button
                 type="button"
                 disabled={item.quantity === 1}
@@ -102,7 +99,6 @@ export default function GroceryItemForm({ onAddItem }) {
                 -
               </button>
 
-              {/* Quantity Input */}
               <input
                 id="quantity"
                 name="quantity"
@@ -114,7 +110,6 @@ export default function GroceryItemForm({ onAddItem }) {
                 className="w-full text-center p-2 h-10 dark:bg-slate-700 dark:text-white"
               />
 
-              {/* Increase Button */}
               <button
                 type="button"
                 disabled={item.quantity === 90}
